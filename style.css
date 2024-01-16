@@ -1,0 +1,18 @@
+.box {
+    border: 1px solid palevioletred;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.set_text, .set_button, .set_box {
+    display: flex;
+    justify-content: center;
+}
+
+.set_box {
+    margin: 1rem 1rem;
+    gap: 1rem;
+    text-align: center;
+    line-height: 50px;
+}
