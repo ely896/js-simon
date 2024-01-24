@@ -14,6 +14,7 @@ console.log('funziona');
 
 // generazione input per numeri random
 
+/*
 const generaInput = document.getElementById('genera');
 let numberComputerArray = [];
 
@@ -106,9 +107,76 @@ function myFunction() {
         
     }
 };
+*/
+
+// Esercizio con suggerimenti di Luigi
+
+const generaInput = document.getElementById('genera');
+let numberComputerArray = [];
+
+generaInput.addEventListener('click', function () {
+    
+
+    let boxElements = document.querySelectorAll(".box");
+
+    for (let i = 0; i < 5; i++) {
+        let xRandom = Math.floor(Math.random() * 10);
+        numberComputerArray.push(xRandom);
+        console.log(xRandom);
+
+        // Stampa in pagina i numeri random generati
+        boxElements[i].innerHTML = xRandom;
+    }
+
+    console.log(numberComputerArray);
+
+    
+    setTimeout(resetNumbers, 5000);
+
+    function resetNumbers() {
+        let boxElements = document.querySelectorAll(".box");
+        for (let i = 0; i < boxElements.length; i++) {
+            boxElements[i].innerHTML = " ";
+        }
+        
+    }
+});
 
 
 
 
+let userNumberArray = [];
 
+setTimeout(myFunction, 15000);
 
+function myFunction() {
+   
+    
+
+    for (let i = 0; i < 5; i++) {
+
+       let userNumber = parseInt(prompt("Inserisci i 5 numeri ordine visualizzato:"));
+       console.log(userNumber);
+
+        if (!isNaN(userNumber)) {
+
+            userNumberArray.push(userNumber)
+        }   else {
+            alert("Numero non inserito, per favore inserisci un numero");
+            i--;
+        }   
+        
+    }
+
+    console.log(userNumberArray);
+
+    for (let i = 0; i < 5; i++) {
+        if (userNumberArray[i] === numberComputerArray[i]) {
+            console.log('the winner is user');
+
+        } else {
+            console.log('the winner is computer');
+        }
+        
+    }
+};
